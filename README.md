@@ -1,19 +1,31 @@
-# BCSH1_semestralni_prace
+# BCSH1 Semestralní práce
 - Autor: Petr Mrva
 - Varianta: B - Jednoduchá počítačová hra
 - Téma: Jump Journey (Super Mario like)
 
 ## Seznam funkcionalit: 
 ### **Sledované entity:**
-- Hráč, nepřátelé(jednoduchá AI), sbíratelné předměty (gems/coins), cílový objekt levelu
+- #### Hráč
+- #### Nepřátelé 
+  - Jednoduchá AI
+- #### Sbíratelné předměty 
+  - Gems
+  - Coins
+- #### Cílový objekt levelu
 ### **Pohyb a animace:**
-- Realizace plynulého fyzikálního pohybu hráče (běh,skok) 
+- #### Realizace plynulého fyzikálního pohybu hráče
+  - Běh
+  - Skok
 ### **Úrovně:**
-- Tři graficky i náročností odlišná prostředí (Les, Jeskyně a Hrad)
+- #### Tři graficky i náročností odlišná prostředí
+  - Les
+  - Jeskyně
+  - Hrad
 ### **Nepřátelé:**
-- Implementace jednoduché "AI" (patrolující nepřátelé s kolizí)
+- #### Implementace jednoduché "AI" 
+  - Patrolující nepřátelé s kolizí
 ### **Perzistence dat:**
-- Ukládání a načítání dosaženého High Score a odemknutých úrovní do textového nebo JSON souboru
+- #### Ukládání a načítání dosaženého High Score a odemknutých úrovní do JSON souboru
 
 
 ## **Dokumentace**
