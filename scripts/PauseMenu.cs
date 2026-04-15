@@ -66,6 +66,6 @@ public partial class PauseMenu : CanvasLayer
 		GetTree().Paused = false; 
 		Hide();
 		
-		_gm.ChangeSceneWithTransition();
+		GetTree().ChangeSceneToFile("res://scenes/main_menu.tscn");
 	}
 }
