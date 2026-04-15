@@ -1,0 +1,95 @@
+[gd_scene format=3 uid="uid://byqi0lx58765g"]
+
+[ext_resource type="Script" uid="uid://d2rbu2yar6ebe" path="res://scripts/PauseMenu.cs" id="1_myx47"]
+[ext_resource type="FontFile" uid="uid://br4n56b2wux5p" path="res://assets/Background/Gwenchana.ttf" id="2_kukqi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5d2l8"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7l7mv"]
+bg_color = Color(0.7987912, 0.7987912, 0.79879117, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_v4r4p"]
+bg_color = Color(0.66821647, 0.6682165, 0.66821647, 1)
+corner_radius_top_left = 16
+corner_radius_top_right = 16
+corner_radius_bottom_right = 16
+corner_radius_bottom_left = 16
+shadow_size = 5
+
+[node name="PauseMenu" type="CanvasLayer" unique_id=1453050946]
+process_mode = 3
+script = ExtResource("1_myx47")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=499724089]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.47058824)
+
+[node name="TitleLabel" type="Label" parent="." unique_id=1763752081]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -97.0
+offset_top = 130.0
+offset_right = 97.0
+offset_bottom = 199.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_kukqi")
+theme_override_font_sizes/font_size = 72
+text = "PAUSE"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="." unique_id=1432342688]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -91.0
+offset_top = -9.0
+offset_right = 91.0
+offset_bottom = 130.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 16
+
+[node name="StatsLabel" type="Label" parent="VBoxContainer" unique_id=2052807861]
+layout_mode = 2
+text = "Coins: 0 | Deaths: 0"
+horizontal_alignment = 1
+
+[node name="ResumeButton" type="Button" parent="VBoxContainer" unique_id=979468901]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7l7mv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v4r4p")
+text = "Resume"
+
+[node name="MenuButton" type="Button" parent="VBoxContainer" unique_id=833160089]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_5d2l8")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_7l7mv")
+theme_override_styles/hover = SubResource("StyleBoxFlat_v4r4p")
+text = "Main Menu"
+
+[connection signal="pressed" from="VBoxContainer/ResumeButton" to="." method="OnResume"]
+[connection signal="pressed" from="VBoxContainer/MenuButton" to="." method="OnMenu"]

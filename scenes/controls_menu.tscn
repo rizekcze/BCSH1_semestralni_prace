@@ -1,0 +1,131 @@
+[gd_scene format=3 uid="uid://t72wxi30ii2k"]
+
+[ext_resource type="Script" uid="uid://c5bltspbwysg8" path="res://scripts/ControlsMenu.cs" id="1_kdy74"]
+[ext_resource type="FontFile" uid="uid://br4n56b2wux5p" path="res://assets/Fonts/Gwenchana.ttf" id="2_5qlyv"]
+
+[node name="ControlsMenu" type="Control" unique_id=71843832]
+layout_mode = 3
+anchors_preset = 0
+script = ExtResource("1_kdy74")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=1910951737]
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer" unique_id=1749808422]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0.078431375, 0.47843137)
+
+[node name="Back" type="Button" parent="CanvasLayer" unique_id=43401907]
+offset_right = 65.0
+offset_bottom = 67.0
+size_flags_horizontal = 8
+theme_override_font_sizes/font_size = 40
+text = "↩"
+
+[node name="GridContainer" type="GridContainer" parent="CanvasLayer" unique_id=568349119]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/h_separation = 80
+theme_override_constants/v_separation = 6
+columns = 2
+
+[node name="Action" type="Label" parent="CanvasLayer/GridContainer" unique_id=290035706]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.78431374, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Action"
+horizontal_alignment = 1
+
+[node name="Keys" type="Label" parent="CanvasLayer/GridContainer" unique_id=1750765002]
+layout_mode = 2
+theme_override_colors/font_color = Color(0, 0.78431374, 0, 1)
+theme_override_font_sizes/font_size = 30
+text = "Keys"
+horizontal_alignment = 1
+
+[node name="Movement" type="Label" parent="CanvasLayer/GridContainer" unique_id=2044389360]
+layout_mode = 2
+text = "Move"
+horizontal_alignment = 1
+
+[node name="Move" type="Label" parent="CanvasLayer/GridContainer" unique_id=961579625]
+layout_mode = 2
+text = "[A] / [D]  |  ← / →"
+horizontal_alignment = 1
+
+[node name="Jump" type="Label" parent="CanvasLayer/GridContainer" unique_id=1170114822]
+layout_mode = 2
+text = "Jump"
+horizontal_alignment = 1
+
+[node name="Jumping" type="Label" parent="CanvasLayer/GridContainer" unique_id=298311361]
+layout_mode = 2
+text = "[W]  /  ↑  /  [Space]"
+horizontal_alignment = 2
+
+[node name="Run" type="Label" parent="CanvasLayer/GridContainer" unique_id=448934200]
+layout_mode = 2
+text = "Run"
+horizontal_alignment = 1
+
+[node name="Running" type="Label" parent="CanvasLayer/GridContainer" unique_id=589668934]
+layout_mode = 2
+text = "[Shift]"
+horizontal_alignment = 1
+
+[node name="Interact" type="Label" parent="CanvasLayer/GridContainer" unique_id=1076993926]
+layout_mode = 2
+text = "Interact"
+horizontal_alignment = 1
+
+[node name="Interacting" type="Label" parent="CanvasLayer/GridContainer" unique_id=140284041]
+layout_mode = 2
+text = "[E]"
+horizontal_alignment = 1
+
+[node name="Reset" type="Label" parent="CanvasLayer/GridContainer" unique_id=1548213375]
+layout_mode = 2
+text = "Reset"
+horizontal_alignment = 1
+
+[node name="Reseting" type="Label" parent="CanvasLayer/GridContainer" unique_id=1161375661]
+layout_mode = 2
+text = "[R]"
+horizontal_alignment = 1
+
+[node name="Pause" type="Label" parent="CanvasLayer/GridContainer" unique_id=169749809]
+layout_mode = 2
+text = "Pause"
+horizontal_alignment = 1
+
+[node name="Pausing" type="Label" parent="CanvasLayer/GridContainer" unique_id=183351233]
+layout_mode = 2
+text = "[ESC]"
+horizontal_alignment = 1
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=294801572]
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -152.5
+offset_top = 94.0
+offset_right = 152.5
+offset_bottom = 163.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_5qlyv")
+theme_override_font_sizes/font_size = 60
+text = "Controls"
+
+[connection signal="pressed" from="CanvasLayer/Back" to="." method="OnBackPressed"]

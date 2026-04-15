@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://b2siel0e8h4ft"]
+
+[ext_resource type="Script" uid="uid://dmgdvwrgifmgm" path="res://scripts/Sounds.cs" id="1_3iyv6"]
+[ext_resource type="AudioStream" uid="uid://c1il45kv7acbg" path="res://assets/Sounds/xtremefreddy-game-music-loop-7-145285.mp3" id="1_4v5pq"]
+[ext_resource type="AudioStream" uid="uid://4qycgrmg7xnr" path="res://assets/Sounds/ike_machie-dying-sound-453577.mp3" id="2_3iyv6"]
+[ext_resource type="AudioStream" uid="uid://bcg0o824nmyny" path="res://assets/Sounds/universfield-slime-impact-352473.mp3" id="4_p1d1g"]
+[ext_resource type="AudioStream" uid="uid://cxpqjdd14wvfs" path="res://assets/Sounds/magiaz-jump-cartoon-edited.mp3" id="5_qpfqm"]
+[ext_resource type="AudioStream" uid="uid://qjlvd2vv7uay" path="res://assets/Sounds/universfield-game-bonus-edited.mp3" id="6_3iyv6"]
+
+[node name="Sounds" type="Node" unique_id=214658639]
+script = ExtResource("1_3iyv6")
+
+[node name="Music" type="AudioStreamPlayer" parent="." unique_id=135301663]
+stream = ExtResource("1_4v5pq")
+volume_db = -12.0
+autoplay = true
+parameters/looping = true
+
+[node name="Death" type="AudioStreamPlayer" parent="." unique_id=1465622233]
+stream = ExtResource("2_3iyv6")
+pitch_scale = 1.6
+
+[node name="Coin" type="AudioStreamPlayer" parent="." unique_id=1538815303]
+stream = ExtResource("6_3iyv6")
+pitch_scale = 0.9
+
+[node name="SlimeSlash" type="AudioStreamPlayer" parent="." unique_id=1575926238]
+stream = ExtResource("4_p1d1g")
+pitch_scale = 1.2
+
+[node name="Jump" type="AudioStreamPlayer" parent="." unique_id=1621466190]
+stream = ExtResource("5_qpfqm")

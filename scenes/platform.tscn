@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://dqa01xdajdmpt"]
+
+[ext_resource type="Texture2D" uid="uid://bjcdnwv8f14hu" path="res://assets/Tileset/PixelScroller_FullTileset_v02.png" id="1_ba0x2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nlgqw"]
+size = Vector2(36, 5)
+
+[node name="Platform" type="AnimatableBody2D" unique_id=427864037]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=797410502]
+texture = ExtResource("1_ba0x2")
+region_enabled = true
+region_rect = Rect2(239.73328, 88.81958, 36.17697, 5.295311)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=514411145]
+shape = SubResource("RectangleShape2D_nlgqw")
+one_way_collision = true
