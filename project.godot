@@ -23,6 +23,10 @@ PauseMenu="*uid://byqi0lx58765g"
 Transition="*uid://drjds7fxfcoow"
 Sounds="*uid://b2siel0e8h4ft"
 
+[display]
+
+window/stretch/mode="canvas_items"
+
 [dotnet]
 
 project/assembly_name="First Game"
