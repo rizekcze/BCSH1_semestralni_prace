@@ -11,7 +11,6 @@ public partial class Transition : CanvasLayer
 		_anim = GetNode<AnimationPlayer>("AnimationPlayer");
 		_label = GetNode<Label>("LevelLabel");
 		
-		// Na začátku chceme, aby bylo vše průhledné
 		GetNode<ColorRect>("Overlay").Modulate = new Color(1, 1, 1, 0);
 		_label.Modulate = new Color(1, 1, 1, 0);
 	}
@@ -21,7 +20,6 @@ public partial class Transition : CanvasLayer
 		_label.Text = levelName;
 		_anim.Play("fade_in_out");
 		
-		// Počkáme, až animace skončí, než dovolíme další věci
 		await ToSignal(_anim, AnimationPlayer.SignalName.AnimationFinished);
 	}
 }

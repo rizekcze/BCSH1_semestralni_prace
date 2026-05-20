@@ -7,7 +7,6 @@ public partial class Coin : Area2D
 {
 	var gm = GetNode<GameManager>("/root/GameManager");
 	
-	// POJISTKA: Pokud je seznam prázdný, zkus ho načíst ze souboru hned teď
 	if (gm.CollectedCoinsIDs.Count == 0) 
 	{
 		gm.LoadGame();
@@ -32,7 +31,7 @@ public partial class Coin : Area2D
 		{
 			gm.CollectedCoinsIDs.Add(uniqueId);
 			gm.TotalCoins++;
-			gm.SaveGame(); // Tady se to musí zapsat do JSONu!
+			gm.SaveGame();
 		}
 
 		GetNode<Sounds>("/root/Sounds").PlayCoin();

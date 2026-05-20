@@ -46,23 +46,18 @@ public partial class PauseMenu : CanvasLayer
 		TogglePause();
 	}
 
-	// --- UPRAVENÁ METODA PRO MENU ---
 	private void OnMenu()
 	{
-		// 1. Najdeme hráče v aktuální scéně, abychom zjistili jeho pozici
 		var player = GetTree().CurrentScene.GetNodeOrNull<CharacterBody2D>("Player");
 
 		if (player != null)
 		{
-			// 2. Uložíme aktuální souřadnice do GameManageru
 			_gm.LastPlayerPosition = player.GlobalPosition;
 			GD.Print($"Pozice uložena: {player.GlobalPosition}");
 		}
 
-		// 3. Uložíme celý stav hry do JSONu
 		_gm.SaveGame();
 
-		// 4. Resetujeme pauzu a jdeme do menu
 		GetTree().Paused = false; 
 		Hide();
 		

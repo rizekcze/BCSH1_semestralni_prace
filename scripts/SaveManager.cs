@@ -4,8 +4,7 @@ using System;
 public static class SaveManager
 {
 	private const string SavePath = "user://savegame.dat";
-
-	// Data, která chceme ukládat
+ 
 	public static int CurrentLevel = 1;
 	public static int GemsCount = 0;
 	public static int DeathCount = 0;

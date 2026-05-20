@@ -29,7 +29,6 @@ public partial class GameManager : Node
 		LoadGame();
 	}
 
-	// Volá se při stisku New Game v Menu
 	public void NewGame()
 	{
 		TotalCoins = 0;
@@ -42,12 +41,10 @@ public partial class GameManager : Node
 		ChangeSceneWithTransition();
 	}
 
-	// --- KLÍČOVÁ METODA PRO PŘECHOD MEZI LEVELY ---
 	public async void GoToNextLevelWithTransition()
 	{
 		var transition = GetNode<Transition>("/root/Transition");
 
-		// 1. Logika: Co bude další level?
 		GameLevel nextLevel = CurrentLevel switch
 		{
 			GameLevel.Level1 => GameLevel.Level2,
@@ -55,18 +52,14 @@ public partial class GameManager : Node
 			_ => GameLevel.Menu
 		};
 
-		// 2. Příprava textu pro animaci
 		string text = nextLevel == GameLevel.Menu ? "Thanks for playing!" : "Level " + ((int)nextLevel + 1);
 		transition.PlayTransition(text);
 
-		// 3. Čekáme na úplné zatmění (1 vteřina podle tvého timeru)
 		await ToSignal(GetTree().CreateTimer(1.0f), SceneTreeTimer.SignalName.Timeout);
 
-		// 4. Update dat v paměti
 		CurrentLevel = nextLevel;
-		LastPlayerPosition = Vector2.Zero; // Resetujeme pozici, aby hráč v novém levelu nezačal v cíli
+		LastPlayerPosition = Vector2.Zero;
 
-		// Pokud jsme dohráli, připravíme save na Level 1 pro příště, ale načteme Menu
 		if (CurrentLevel == GameLevel.Menu)
 		{
 			CurrentLevel = GameLevel.Level1;
@@ -80,7 +73,6 @@ public partial class GameManager : Node
 		}
 	}
 
-	// Obecná metoda pro změnu scény (pro New Game nebo Load)
 	public async void ChangeSceneWithTransition()
 	{
 		var transition = GetNode<Transition>("/root/Transition");

@@ -13,7 +13,7 @@ public partial class FinishLine : Area2D
 
 	public override void _Process(double delta)
 	{
-		// Iteract E pouze, pokud je hráč v Area2D
+		// Iteract E
 		if (_canInteract && Input.IsActionJustPressed("Interact"))
 		{
 			GoToNextLevel();
